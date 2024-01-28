@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/start_Fragment">
+
+    <fragment
+        android:id="@+id/start_Fragment"
+        android:name="com.practiceapp.navigationcomponentsampleapp.Start_Fragment"
+        android:label="fragment_start_"
+        tools:layout="@layout/fragment_start_" >
+        <action
+            android:id="@+id/action_start_Fragment_to_second_Fragment"
+            app:destination="@id/second_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/second_Fragment"
+        android:name="com.practiceapp.navigationcomponentsampleapp.Second_Fragment"
+        android:label="fragment_second_"
+        tools:layout="@layout/fragment_second_" >
+        <action
+            android:id="@+id/action_second_Fragment_to_end_Fragment"
+            app:destination="@id/end_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/start_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/end_Fragment"
+        android:name="com.practiceapp.navigationcomponentsampleapp.End_Fragment"
+        android:label="fragment_end_"
+        tools:layout="@layout/fragment_end_" >
+        <action
+            android:id="@+id/action_end_Fragment_to_start_Fragment"
+            app:destination="@id/start_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+</navigation>
